@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Threading</string>
+    <string name="asynctask">AsyncTask</string>
+    <string name="handlerthread">HandlerThread</string>
+    <string name="threadpoolexecutor">ThreadPoolExecutor</string>
+    <string name="intentservice">IntentService</string>
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_performer"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Factorial of:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_performer" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_input"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:inputType="number"
+        android:text="7500"
+        app:layout_constraintBottom_toBottomOf="@id/tv_label"
+        app:layout_constraintStart_toEndOf="@id/tv_label"
+        app:layout_constraintTop_toTopOf="@id/tv_label" />
+
+    <TextView
+        android:id="@+id/tv_equal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="@id/tv_label"
+        app:layout_constraintStart_toEndOf="@id/et_input"
+        app:layout_constraintTop_toTopOf="@id/tv_label" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text=". . ."
+        app:layout_constraintEnd_toEndOf="parent"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="@id/tv_label"
+        app:layout_constraintStart_toEndOf="@id/tv_equal"
+        app:layout_constraintTop_toTopOf="@id/tv_label" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/b_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_label,et_input,tv_equal,tv_result" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Calculate on Main Thread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/b_button" />
+
+    <Button
+        android:id="@+id/btn_new_thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate with new thread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_normal" />
+
+    <Button
+        android:id="@+id/btn_loading_simulator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Loading Simulator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_new_thread" />
+
+    <Button
+        android:id="@+id/btn_loading_simulator_coroutine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Loading Simulator Coroutine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_loading_simulator" />
+</androidx.constraintlayout.widget.ConstraintLayout>
